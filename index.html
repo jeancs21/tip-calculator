@@ -5,40 +5,80 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles.css" >
   <title>Frontend Mentor | Tip calculator app</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
+    @import url('https://fonts.googleapis.com/css2?family=Space+Mono&display=swap');
   </style>
 </head>
 <body>
-
-  Bill
-
-  Select Tip %
-  5%
-  10%
-  15%
-  25%
-  50%
-  Custom
-
-  Number of People
-
-  Tip Amount
-  / person
-
-  Total
-  / person
-
-  Reset
-  
-  <div class="attribution">
+  <!--Todo el cuadro-->
+  <div id="supremo">
+    <div id="bigOne">
+      <div class="row">
+        <!--Contenedor que encierra los campos de entrada-->
+        <div id="contenedor-campos" class="col-sm">
+          <form>
+            <div class="form-group">
+              <label for="billInput">Bill</label>
+              <input type="text" class="form-control" id="billInput" placeholder="$"> <!--Poner calculate en onchange-->
+            </div>
+            <div class="form-group">
+              <label>Select Tip %</label>
+              <div class="row">
+                <div class="col-sm">
+                  <button id="btn5" class="btn btn-primary btn-tip" data-tip="5" type="button" onclick="handleClick(event)">5%</button>
+                  <button id="btn10" class="btn btn-primary btn-tip" data-tip="10" type="button" onclick="handleClick(event)">10%</button>
+                  <button id="btn15" class="btn btn-primary btn-tip" data-tip="15" type="button" onclick="handleClick(event)">15%</button>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm">
+                  <button id="btn25" class="btn btn-primary btn-tip" data-tip="25" type="button" onclick="handleClick(event)">25%</button>
+                  <button id="btn50" class="btn btn-primary btn-tip"  data-tip="50" type="button" onclick="handleClick(event)">50%</button>
+                  <button id="btnCustom" class="btn btn-primary btn-tip" type="button" onclick="handleClick(event, true)">Custom</button>
+                  <input id="customTipInput" type="text" class="btn btn-primary btn-tip" placeholder="Tip $" onkeyup="handleValueChange(event)">
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="numberPeopleInput">Number of People</label>
+              <input type="text" class="form-control" id="numberPeopleInput"><!--Poner calculate en onchange-->
+            </div>
+          </form>
+        </div>
+        <!--Contenedor de total-->
+        <div id="contenedor-total" class="col-sm">
+          <div class="row">
+            <div class="col-sm">Tip Total</div>
+            <div class="col-sm loLabels">$<span id="lblTipTotal"></span></div>
+          </div>
+          <div class="row">
+            <div class="col-sm">Tip Amount / person</div>
+            <div class="col-sm loLabels">$<span id="lblAmountPerPerson"></span></div>
+          </div>
+          <div class="row">
+            <div class="col-sm">Total</div>
+            <div class="col-sm loLabels">$<span id="lblBillTotal"></span></div>
+          </div>
+          <div class="row">
+            <div class="col-sm">Total / person</div>
+            <div class="col-sm loLabels">$<span id="lblBillTotalPerPerson"></span></div>
+          </div>
+          <!-- <input id="btnReset" class="btn btn-primary" type="button" value="Calculate" onclick="calculate()"> -->
+        </div>
+      </div>
+    </div>
+  </div>
+<script src="scripts.js"></script>
+  <!-- <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
-  </div>
+  </div> -->
 </body>
 </html>

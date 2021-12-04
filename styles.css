@@ -1,0 +1,93 @@
+body {
+    font-family: 'Space Mono', monospace;
+    background-color:hsl(185, 41%, 84%);
+    font-size: 24px;
+    font-weight: 700;
+    color: hsl(184, 14%, 56%);
+}
+/*Contenedor invisible que permite centrar el contenedor bigOne*/
+#supremo {
+    height: 100%;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/*Contenedor que encierra todos los elementos de la calculadora*/
+#bigOne {
+    background-color: white;
+    padding: 2%;
+    width: 100%;
+    max-width: 700px;
+    border-radius: 20px;
+}
+
+/*Contenedor que encierra los controles de la calculadora*/
+#contenedor-campos {
+    padding: 1%;
+    background-color: aliceblue;
+}
+
+#contenedor-campos .form-group {
+    margin: 2%;
+}
+
+/*Botones de la seccion de Select Tip %*/
+.btn-tip {
+    color: white;
+    background-color: hsl(183, 100%, 15%);
+    width: 90px;
+    border: none;
+    font-weight: 700;
+    margin: 2px;
+}
+
+.btn-tip:hover {
+    background-color: hsl(185, 41%, 84%);
+    color:hsl(183, 100%, 15%);
+    border-style: solid;
+    border-width: 1px 1px 1px 1px;
+    border-color: hsl(183, 100%, 15%);
+}
+
+#btnCustom {
+    background-color: hsl(185, 41%, 84%);
+    color: hsl(180, 1%, 51%);
+}
+
+#customTipInput {
+    display: none;
+    background-color: hsl(185, 41%, 84%);
+    color:hsl(183, 100%, 15%);
+}
+
+/*Contenedor de la seccion de total*/
+#contenedor-total {
+    background-color: hsl(183, 100%, 15%);
+    padding: 1%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#contenedor-total div {
+    color: white;
+}
+
+#btnReset {
+    width: 300px;
+    background-color: hsl(165, 67%, 47%);
+    border: none;
+    font-weight: 700;
+    color: hsl(183, 100%, 15%);
+    align-self: center;
+}
+
+#btnReset:hover {
+    background-color: hsl(185, 41%, 84%);
+}
+
+.isActive {
+    background-color: blue;
+}
