@@ -3,14 +3,36 @@ function calculate() {
     const porc = parseInt(percentageNumber) / 100;
     const billTxt = parseFloat(document.getElementById('billInput').value);
     const numberPerson = parseInt(document.getElementById("numberPeopleInput").value);
-    const tipAmountTotal = billTxt * porc;
-    const tipPerPerson = tipAmountTotal / numberPerson;
-    const total = (tipAmountTotal + billTxt) / numberPerson;
-    const totalWithTip = billTxt + tipAmountTotal;
-    document.getElementById('lblTipTotal').textContent = tipAmountTotal;
-    document.getElementById('lblAmountPerPerson').textContent = tipPerPerson;
-    document.getElementById('lblBillTotal').textContent = totalWithTip;
-    document.getElementById('lblBillTotalPerPerson').textContent = total;
+    const customTipTxt = parseFloat(document.getElementById('customTipInput').value);
+    const customPorc = customTipTxt / 100;
+    //Validacion
+    if (isNaN(billTxt) || isNaN(numberPerson))
+    {
+        alert("Datos incorrectos o vacio");
+        resetear();
+    }
+    else {
+        if (isNaN(customTipTxt)){
+            const tipAmountTotal = billTxt * porc;
+            const tipPerPerson = tipAmountTotal / numberPerson;
+            const total = (tipAmountTotal + billTxt) / numberPerson;
+            const totalWithTip = billTxt + tipAmountTotal;
+            document.getElementById('lblTipTotal').textContent = tipAmountTotal;
+            document.getElementById('lblAmountPerPerson').textContent = tipPerPerson;
+            document.getElementById('lblBillTotal').textContent = totalWithTip;
+            document.getElementById('lblBillTotalPerPerson').textContent = total;
+        }
+        else {
+            const tipAmountTotal = billTxt * customPorc;
+            const tipPerPerson = tipAmountTotal / numberPerson;
+            const total = (tipAmountTotal + billTxt) / numberPerson;
+            const totalWithTip = billTxt + tipAmountTotal;
+            document.getElementById('lblTipTotal').textContent = tipAmountTotal;
+            document.getElementById('lblAmountPerPerson').textContent = tipPerPerson;
+            document.getElementById('lblBillTotal').textContent = totalWithTip;
+            document.getElementById('lblBillTotalPerPerson').textContent = total;
+        }
+    }
 }
 
 function handleClick(e, isCustom = false){
@@ -52,9 +74,17 @@ function toggleCustomTip(isShown = true){
      }
     
 }
-function customTip() {
-    
+function resetear() {
+    const campos = document.getElementsByClassName('form-control');
+    const resultados = document.querySelectorAll('span');
+    for (const txt of campos) {
+        txt.value = "";
+    }
+    for (const result of resultados) {
+        result.textContent = "0.00";
+    }
 }
+
 // function changeToActive() {
 //     // console.log(e);
 //     // e.preventDefault();

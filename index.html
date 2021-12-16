@@ -30,21 +30,31 @@
             </div>
             <div class="form-group">
               <label>Select Tip %</label>
-              <div class="row">
-                <div class="col-sm">
+              <div id="contenedor-botones">
+              <!--<div class="row">-->
+                <div class="col-6-col-md-4">
                   <button id="btn5" class="btn btn-primary btn-tip" data-tip="5" type="button" onclick="handleClick(event)">5%</button>
+                </div>
+                <div class="col-6-col-md-4">
                   <button id="btn10" class="btn btn-primary btn-tip" data-tip="10" type="button" onclick="handleClick(event)">10%</button>
+                </div>
+                <div class="col-6-col-md-4">
                   <button id="btn15" class="btn btn-primary btn-tip" data-tip="15" type="button" onclick="handleClick(event)">15%</button>
                 </div>
-              </div>
-              <div class="row">
-                <div class="col-sm">
+              <!--</div>-->
+              <!--<div class="row">-->
+                <div class="col-6-col-md-4">
                   <button id="btn25" class="btn btn-primary btn-tip" data-tip="25" type="button" onclick="handleClick(event)">25%</button>
-                  <button id="btn50" class="btn btn-primary btn-tip"  data-tip="50" type="button" onclick="handleClick(event)">50%</button>
-                  <button id="btnCustom" class="btn btn-primary btn-tip" type="button" onclick="handleClick(event, true)">Custom</button>
-                  <input id="customTipInput" type="text" class="btn btn-primary btn-tip" placeholder="Tip $" onkeyup="handleValueChange(event)">
                 </div>
-              </div>
+                <div class="col-6-col-md-4">
+                  <button id="btn50" class="btn btn-primary btn-tip"  data-tip="50" type="button" onclick="handleClick(event)">50%</button>
+                </div>
+                <div class="col-6-col-md-4">
+                  <button id="btnCustom" class="btn btn-primary btn-tip" type="button" onclick="handleClick(event, true)">Custom</button>
+                  <input id="customTipInput" type="text" class="btn btn-primary btn-tip form-control" placeholder="Tip $" onkeyup="handleValueChange(event)" onchange="calculate()">
+                </div>
+                </div>
+              <!--</div>-->
             </div>
             <div class="form-group">
               <label for="numberPeopleInput">Number of People</label>
@@ -55,22 +65,22 @@
         <!--Contenedor de total-->
         <div id="contenedor-total" class="col-sm">
           <div class="row">
-            <div class="col-sm">Tip Total</div>
-            <div class="col-sm loLabels">$<span id="lblTipTotal"></span></div>
+            <div class="col-sm loLabels">Tip Total</div>
+            <div class="col-sm resultados">$<span id="lblTipTotal"> 0.00</span></div>
           </div>
           <div class="row">
-            <div class="col-sm">Tip Amount / person</div>
-            <div class="col-sm loLabels">$<span id="lblAmountPerPerson"></span></div>
+            <div class="col-sm loLabels">Tip Amount / person</div>
+            <div class="col-sm resultados">$<span id="lblAmountPerPerson"> 0.00</span></div>
           </div>
           <div class="row">
-            <div class="col-sm">Total</div>
-            <div class="col-sm loLabels">$<span id="lblBillTotal"></span></div>
+            <div class="col-sm loLabels">Total</div>
+            <div class="col-sm resultados">$<span id="lblBillTotal"> 0.00</span></div>
           </div>
           <div class="row">
-            <div class="col-sm">Total / person</div>
-            <div class="col-sm loLabels">$<span id="lblBillTotalPerPerson"></span></div>
+            <div class="col-sm loLabels">Total / person</div>
+            <div class="col-sm resultados">$<span id="lblBillTotalPerPerson"> 0.00</span></div>
           </div>
-          <!-- <input id="btnReset" class="btn btn-primary" type="button" value="Calculate" onclick="calculate()"> -->
+          <input type="reset" id="btnReset" class="btn btn-primary" value="Reset" onclick="resetear()">
         </div>
       </div>
     </div>

@@ -16,18 +16,20 @@ body {
 /*Contenedor que encierra todos los elementos de la calculadora*/
 #bigOne {
     background-color: white;
-    padding: 2%;
+    padding: 3%;
     width: 100%;
-    max-width: 700px;
+    max-width: 800px;
     border-radius: 20px;
 }
 
 /*Contenedor que encierra los controles de la calculadora*/
 #contenedor-campos {
-    padding: 1%;
-    background-color: aliceblue;
+    margin-right: 1%;
 }
-
+#contenedor-botones {
+    display: flex;
+    flex-wrap: wrap;
+}
 #contenedor-campos .form-group {
     margin: 2%;
 }
@@ -64,7 +66,7 @@ body {
 /*Contenedor de la seccion de total*/
 #contenedor-total {
     background-color: hsl(183, 100%, 15%);
-    padding: 1%;
+    padding: 10px;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -90,4 +92,33 @@ body {
 
 .isActive {
     background-color: blue;
+}
+
+.loLabels {
+    font-size: small;
+}
+.resultados {
+    font-size: larger;
+}
+@media (max-width: 768px) {
+    #contenedor-botones {
+        width: 100%;
+    }
+}
+@media (max-width: 468px) {
+    #bigOne {
+        width: 100%;
+    }
+
+    #contenedor-total {
+        width: 100%;
+    }
+
+    #contenedor-total input {
+        width: 50%;
+    }
+    
+    #contenedor-botones {
+        width: 100%;
+    }
 }
